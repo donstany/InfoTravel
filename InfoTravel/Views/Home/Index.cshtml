@@ -1,0 +1,19 @@
+﻿@model List<PersonVM>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+<h1 class="text-center my-2">Пътници</h1>
+
+<div class=" my-2">
+    <a asp-controller="Home" asp-action="NewPerson" class="btn btn-warning">Нов пътник</a>
+</div>
+
+@foreach(PersonVM person in Model)
+{
+    <div class="my-2">
+       @person.TravelTypeDescription - @person.PersonName
+    </div>
+}

@@ -1,0 +1,34 @@
+﻿@model PersonVM
+@{
+    ViewData["Title"] = "NewPerson";
+
+    var travelList = new List<SelectListItem>
+    {
+         new SelectListItem{ Value = "B", Text = "Автобус"},
+         new SelectListItem{ Value = "F", Text = "Самолет"},
+
+    };
+}
+
+<h1 class="text-center my-2">Нов пътник</h1>
+
+<form asp-controller="Home" asp-action="NewPerson">
+
+
+    <div>
+        <label asp-for="TravelType"></label>
+        <select asp-for="TravelType" asp-items="travelList"></select>
+    </div>
+
+    <div>
+
+        <label asp-for="PersonName"></label>
+        <input type="text" asp-for="PersonName" />
+    </div>
+
+    <div class="my-2">
+        <button class="btn btn-danger" type="submit">Запиши</button>
+    </div>
+</form>
+
+
